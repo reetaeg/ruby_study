@@ -12,8 +12,9 @@
   ** * require fonts/css/font-awesome.min
 
  *
-
-
+ *= require_tree .
+ *= require dataTables/jquery.dataTables
+ *= require_self
  */
 
 @import "bootstrap-sprockets";
@@ -29,3 +30,6 @@
 @import "css/ion.rangeSlider";
 @import "css/ion.rangeSlider.skinFlat";
 @import "pace";
+
+
+

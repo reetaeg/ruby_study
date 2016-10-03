@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  from_code: MyString
+  from_name: MyString
+  sale_number: MyString
+  confirm_date: MyString
+  delivery_number: 9.99
+  to_code: MyString
+  to_name: MyString
+  depart_code: MyString
+  depart_name: MyString
+  supply_type: MyString
+  order_no: 1
+  product_code: MyString
+  product_name: MyString
+  product_size: MyString
+  product_tax: 9.99
+  purchase_unit_price: 9.99
+  purchase_amount: 1
+  supply_price: 9.99
+  purchase_tax: 9.99
+  purchase_price: 9.99
+  commission: 9.99
+  commission_tax: 9.99
+
+two:
+  from_code: MyString
+  from_name: MyString
+  sale_number: MyString
+  confirm_date: MyString
+  delivery_number: 9.99
+  to_code: MyString
+  to_name: MyString
+  depart_code: MyString
+  depart_name: MyString
+  supply_type: MyString
+  order_no: 1
+  product_code: MyString
+  product_name: MyString
+  product_size: MyString
+  product_tax: 9.99
+  purchase_unit_price: 9.99
+  purchase_amount: 1
+  supply_price: 9.99
+  purchase_tax: 9.99
+  purchase_price: 9.99
+  commission: 9.99
+  commission_tax: 9.99

@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Nh Sales</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>From code</th>
+      <th>From name</th>
+      <th>Sale number</th>
+      <th>Confirm date</th>
+      <th>Delivery number</th>
+      <th>To code</th>
+      <th>To name</th>
+      <th>Depart code</th>
+      <th>Depart name</th>
+      <th>Supply type</th>
+      <th>Order no</th>
+      <th>Product code</th>
+      <th>Product name</th>
+      <th>Product size</th>
+      <th>Product tax</th>
+      <th>Purchase unit price</th>
+      <th>Purchase amount</th>
+      <th>Supply price</th>
+      <th>Purchase tax</th>
+      <th>Purchase price</th>
+      <th>Commission</th>
+      <th>Commission tax</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nh_sales.each do |nh_sale| %>
+      <tr>
+        <td><%= nh_sale.from_code %></td>
+        <td><%= nh_sale.from_name %></td>
+        <td><%= nh_sale.sale_number %></td>
+        <td><%= nh_sale.confirm_date %></td>
+        <td><%= nh_sale.delivery_number %></td>
+        <td><%= nh_sale.to_code %></td>
+        <td><%= nh_sale.to_name %></td>
+        <td><%= nh_sale.depart_code %></td>
+        <td><%= nh_sale.depart_name %></td>
+        <td><%= nh_sale.supply_type %></td>
+        <td><%= nh_sale.order_no %></td>
+        <td><%= nh_sale.product_code %></td>
+        <td><%= nh_sale.product_name %></td>
+        <td><%= nh_sale.product_size %></td>
+        <td><%= nh_sale.product_tax %></td>
+        <td><%= nh_sale.purchase_unit_price %></td>
+        <td><%= nh_sale.purchase_amount %></td>
+        <td><%= nh_sale.supply_price %></td>
+        <td><%= nh_sale.purchase_tax %></td>
+        <td><%= nh_sale.purchase_price %></td>
+        <td><%= nh_sale.commission %></td>
+        <td><%= nh_sale.commission_tax %></td>
+        <td><%= link_to 'Show', nh_sale %></td>
+        <td><%= link_to 'Edit', edit_nh_sale_path(nh_sale) %></td>
+        <td><%= link_to 'Destroy', nh_sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Nh sale', new_nh_sale_path %>

@@ -1,0 +1,140 @@
+// Place all the styles related to the SalesPivot controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.pvtUi {
+  color: #333;
+}
+table.pvtTable {
+  font-size: 8pt;
+  text-align: left;
+  border-collapse: collapse;
+  thead {
+    tr {
+      th {
+        background-color: #e6EEEE;
+        border: 1px solid #CDCDCD;
+        font-size: 8pt;
+        padding: 5px;
+      }
+    }
+  }
+  tbody {
+    tr {
+      th {
+        background-color: #e6EEEE;
+        border: 1px solid #CDCDCD;
+        font-size: 8pt;
+        padding: 5px;
+      }
+      td {
+        color: #3D3D3D;
+        padding: 5px;
+        background-color: #FFF;
+        border: 1px solid #CDCDCD;
+        vertical-align: top;
+        text-align: right;
+      }
+    }
+  }
+  .pvtColLabel {
+    text-align: center;
+  }
+  .pvtTotalLabel {
+    text-align: right;
+  }
+}
+.pvtTotal {
+  font-weight: bold;
+}
+.pvtGrandTotal {
+  font-weight: bold;
+}
+.pvtVals {
+  text-align: center;
+  border: 1px solid gray;
+  background: #EEE;
+  padding: 5px;
+  min-width: 20px;
+  min-height: 20px;
+}
+.pvtAggregator {
+  margin-bottom: 5px;
+}
+.pvtAxisContainer {
+  border: 1px solid gray;
+  background: #EEE;
+  padding: 5px;
+  min-width: 20px;
+  min-height: 20px;
+  li {
+    padding: 8px 6px;
+    list-style-type: none;
+    cursor: move;
+    span.pvtAttr {
+      -webkit-text-size-adjust: 100%;
+      background: #F3F3F3;
+      border: 1px solid #DEDEDE;
+      padding: 2px 5px;
+      white-space: nowrap;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+    }
+  }
+  li.pvtPlaceholder {
+    -webkit-border-radius: 5px;
+    padding: 3px 15px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px dashed #aaa;
+  }
+}
+.pvtTriangle {
+  cursor: pointer;
+  color: grey;
+}
+.pvtHorizList {
+  li {
+    display: inline;
+  }
+}
+.pvtVertList {
+  vertical-align: top;
+}
+.pvtFilteredAttribute {
+  font-style: italic;
+}
+.pvtFilterBox {
+  z-index: 100;
+  width: 280px;
+  border: 1px solid gray;
+  background-color: #fff;
+  position: absolute;
+  padding: 20px;
+  text-align: center;
+  h4 {
+    margin: 0;
+  }
+  p {
+    margin: 1em auto;
+  }
+  label {
+    font-weight: normal;
+  }
+  input[type='checkbox'] {
+    margin-right: 5px;
+  }
+}
+.pvtCheckContainer {
+  text-align: left;
+  overflow: scroll;
+  width: 100%;
+  max-height: 200px;
+  p {
+    margin: 5px;
+  }
+}
+.pvtRendererArea {
+  padding: 5px;
+}

@@ -1,0 +1,129 @@
+<!-- page content -->
+<div class="right_col" role="main">
+	<div class="">
+	    <div class="page-title">
+	      <div class="title_left">
+	        <h3>Plain Page</h3>
+	      </div>
+	
+	      <div class="title_right">
+	        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+	          <div class="input-group">
+	            <input type="text" class="form-control" placeholder="Search for...">
+	               <span class="input-group-btn">
+	                       <button class="btn btn-default" type="button">Go!</button>
+	               </span>
+	          </div>
+	        </div>
+	      </div>
+	    </div>	
+	    <div class="clearfix"></div>				
+		<%= form_for(@nh_sale) do |f| %>
+		  <% if @nh_sale.errors.any? %>
+		    <div id="error_explanation">
+		      <h2><%= pluralize(@nh_sale.errors.count, "error") %> prohibited this nh_sale from being saved:</h2>
+		
+		      <ul>
+		      <% @nh_sale.errors.full_messages.each do |msg| %>
+		        <li><%= msg %></li>
+		      <% end %>
+		      </ul>
+		    </div>
+		  <% end %>
+			<div class="row">
+				  <div class="field">
+				    <%= f.label :from_code %><br>
+		    <%= f.text_field :from_code %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :from_name %><br>
+		    <%= f.text_field :from_name %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :sale_number %><br>
+		    <%= f.text_field :sale_number %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :confirm_date %><br>
+		    <%= f.text_field :confirm_date %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :delivery_number %><br>
+		    <%= f.text_field :delivery_number %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :to_code %><br>
+		    <%= f.text_field :to_code %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :to_name %><br>
+		    <%= f.text_field :to_name %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :depart_code %><br>
+		    <%= f.text_field :depart_code %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :depart_name %><br>
+		    <%= f.text_field :depart_name %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :supply_type %><br>
+		    <%= f.text_field :supply_type %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :order_no %><br>
+		    <%= f.number_field :order_no %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :product_code %><br>
+		    <%= f.text_field :product_code %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :product_name %><br>
+		    <%= f.text_field :product_name %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :product_size %><br>
+		    <%= f.text_field :product_size %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :product_tax %><br>
+		    <%= f.text_field :product_tax %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :purchase_unit_price %><br>
+		    <%= f.text_field :purchase_unit_price %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :purchase_amount %><br>
+		    <%= f.number_field :purchase_amount %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :supply_price %><br>
+		    <%= f.text_field :supply_price %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :purchase_tax %><br>
+		    <%= f.text_field :purchase_tax %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :purchase_price %><br>
+		    <%= f.text_field :purchase_price %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :commission %><br>
+		    <%= f.text_field :commission %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :commission_tax %><br>
+		    <%= f.text_field :commission_tax %>
+				  </div>
+					</div>
+			
+		  <div class="actions">
+		    <%= f.submit %>
+		  </div>
+		<% end %>
+	</div>
+</div>

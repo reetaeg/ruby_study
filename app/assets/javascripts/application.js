@@ -41,5 +41,10 @@
 
 //= require flash.js
 
+//= require_tree .
+
+//= require dataTables/jquery.dataTables
+
+
 
 

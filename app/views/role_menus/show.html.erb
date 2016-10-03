@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @role_menu.name %>
+</p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @role_menu.role_id %>
+</p>
+
+<p>
+  <strong>Is used:</strong>
+  <%= @role_menu.is_used %>
+</p>
+
+<p>
+  <strong>Menu:</strong>
+  <%= @role_menu.menu_id %>
+</p>
+
+<%= link_to 'Edit', edit_role_menu_path(@role_menu) %> |
+<%= link_to 'Back', role_menus_path %>
