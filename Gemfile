@@ -39,6 +39,8 @@ gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-ra
 gem 'ajax-datatables-rails'
 gem "kaminari"
 
+gem 'resque'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

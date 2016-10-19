@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Nh Sales</h1>
+<h2>농협매출</h2>
 
 <table id="data-table" class="table nowrap" data-source="<%= nh_sales_path(format: :json) %>">
   <thead>
@@ -39,7 +39,6 @@
 
 <div class="row no-print">
   <div class="col-xs-12">
-	<%= link_to 'New Nh sale', new_nh_sale_path , class:'btn btn-default'%>
 	
 	<%= form_tag import_nh_sales_path, multipart: true do %>
 	  <%= file_field_tag :file ,class:'btn btn-default pull-right'%>
@@ -48,6 +47,21 @@
   </div>
 </div>
 
+<script>
+(function() {
+  $(function() {
+    return $('#data-table').dataTable({
+      processing: true,
+      serverSide: true,
+      ajax: $('#data-table').data('source'),
+      pagingType: 'full_numbers',
+      scrollX: true,
+      order: false
+    });
+  });
+
+}).call(this);	
+</script>
 
 
 

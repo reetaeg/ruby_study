@@ -41,10 +41,10 @@
 
 //= require flash.js
 
-//= require_tree .
-
 //= require dataTables/jquery.dataTables
 
+//= require sales_pivot
 
+//= require progress_bar
 
 

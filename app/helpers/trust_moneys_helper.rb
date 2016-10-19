@@ -1,0 +1,2 @@
+module TrustMoneysHelper
+end

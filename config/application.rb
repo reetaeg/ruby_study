@@ -31,6 +31,9 @@ module GentelellaOnRails
     config.to_prepare do
       Devise::SessionsController.layout proc{ |controller| action_name == 'new' ? "common" : "application" }
     end
+    
+    config.active_job.queue_adapter = :resque
+    
 
   end
 end

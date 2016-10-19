@@ -2,7 +2,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+	
   <title><%= content_for?(:title) ? yield(:title) : "X-Site" %> </title>
+
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -11,7 +16,6 @@
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
 
   <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
 
@@ -21,9 +25,9 @@
       <div align="center" id="flash" class="alert alert-<%= key %>"><%= value %></div>
   <% end %>
 
-<%= render "partials/sidenav" if user_signed_in? %>
+<%= render "partials/sidenav" %>
 
-<%= render "partials/topnav" if user_signed_in?%>
+<%= render "partials/topnav" %>
 <!-- page content -->
 <div class="right_col" role="main">
 
@@ -31,7 +35,9 @@
 
 </div>
   <%= render "partials/footer" %>
+  
   <%= javascript_include_tag 'footermanifest', 'data-turbolinks-track' => true %>
+
 
 </body>
 </html>

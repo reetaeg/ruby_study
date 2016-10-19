@@ -1,0 +1,77 @@
+<!-- page content -->
+<div class="right_col" role="main">
+	<div class="">
+	    <div class="page-title">
+	      <div class="title_left">
+	        <h3>Plain Page</h3>
+	      </div>
+	
+	      <div class="title_right">
+	        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+	          <div class="input-group">
+	            <input type="text" class="form-control" placeholder="Search for...">
+	               <span class="input-group-btn">
+	                       <button class="btn btn-default" type="button">Go!</button>
+	               </span>
+	          </div>
+	        </div>
+	      </div>
+	    </div>	
+	    <div class="clearfix"></div>				
+		<%= form_for(@agency) do |f| %>
+		  <% if @agency.errors.any? %>
+		    <div id="error_explanation">
+		      <h2><%= pluralize(@agency.errors.count, "error") %> prohibited this agency from being saved:</h2>
+		
+		      <ul>
+		      <% @agency.errors.full_messages.each do |msg| %>
+		        <li><%= msg %></li>
+		      <% end %>
+		      </ul>
+		    </div>
+		  <% end %>
+			<div class="row">
+				  <div class="field">
+				    <%= f.label :name %><br>
+		    <%= f.text_field :name %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :agency_type %><br>
+		    <%= f.text_field :agency_type %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :is_used %><br>
+		    <%= f.check_box :is_used %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :area %><br>
+		    <%= f.text_field :area %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :edi_code %><br>
+		    <%= f.text_field :edi_code %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :email %><br>
+		    <%= f.text_field :email %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :phone %><br>
+		    <%= f.text_field :phone %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :owner_name %><br>
+		    <%= f.text_field :owner_name %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :biz_number %><br>
+		    <%= f.text_field :biz_number %>
+				  </div>
+					</div>
+			
+		  <div class="actions">
+		    <%= f.submit %>
+		  </div>
+		<% end %>
+	</div>
+</div>

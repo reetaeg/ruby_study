@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Caegory</th>
+      <th>Product type</th>
+      <th>Size</th>
+      <th>Box count</th>
+      <th>Ta count</th>
+      <th>Img url</th>
+      <th>Description</th>
+      <th>Purchase</th>
+      <th>Purchase tax</th>
+      <th>Supply</th>
+      <th>Supply tax</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.code %></td>
+        <td><%= product.caegory %></td>
+        <td><%= product.product_type %></td>
+        <td><%= product.size %></td>
+        <td><%= product.box_count %></td>
+        <td><%= product.ta_count %></td>
+        <td><%= product.img_url %></td>
+        <td><%= product.description %></td>
+        <td><%= product.purchase %></td>
+        <td><%= product.purchase_tax %></td>
+        <td><%= product.supply %></td>
+        <td><%= product.supply_tax %></td>
+        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product', new_product_path %>

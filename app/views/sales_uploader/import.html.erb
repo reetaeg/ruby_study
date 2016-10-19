@@ -1,0 +1,28 @@
+<div class="panel panel-default">
+	
+	<div class="panel-body">
+		
+		<div id="import_progress" data-ping-time="1000">
+			
+	      <span>Progress</span>
+
+		  <div class="progress">
+		    <div class="progress-bar" style="width: 0%;"></div>
+		  </div>
+		
+		  <div class="message">Not Running...</div>
+		</div>		
+		
+		
+	</div>
+
+
+</div>
+
+
+<script>
+	(function() {
+	  var progressBar = new ProgressBar("#import_progress", "<%= progress_bar_path @progress_bar %>");
+	  progressBar.start();
+	})();
+</script>

@@ -1,0 +1,61 @@
+<!-- page content -->
+<div class="right_col" role="main">
+	<div class="">
+	    <div class="page-title">
+	      <div class="title_left">
+	        <h3>Plain Page</h3>
+	      </div>
+	
+	      <div class="title_right">
+	        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+	          <div class="input-group">
+	            <input type="text" class="form-control" placeholder="Search for...">
+	               <span class="input-group-btn">
+	                       <button class="btn btn-default" type="button">Go!</button>
+	               </span>
+	          </div>
+	        </div>
+	      </div>
+	    </div>	
+	    <div class="clearfix"></div>				
+		<%= form_for(@system_code) do |f| %>
+		  <% if @system_code.errors.any? %>
+		    <div id="error_explanation">
+		      <h2><%= pluralize(@system_code.errors.count, "error") %> prohibited this system_code from being saved:</h2>
+		
+		      <ul>
+		      <% @system_code.errors.full_messages.each do |msg| %>
+		        <li><%= msg %></li>
+		      <% end %>
+		      </ul>
+		    </div>
+		  <% end %>
+			<div class="row">
+				  <div class="field">
+				    <%= f.label :code_type %><br>
+		    <%= f.text_field :code_type %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :code %><br>
+		    <%= f.text_field :code %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :name %><br>
+		    <%= f.text_field :name %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :system_code_id %><br>
+		    <%= f.collection_select :system_code_id, SystemCode.all, :id, :name, prompt: true  %>
+				  </div>
+				  <div class="field">
+				    <%= f.label :description %><br>
+		    <%= f.text_field :description %>
+				  </div>
+					</div>
+			
+		  <div class="actions">
+		    <%= f.submit %>
+		  </div>
+		<% end %>
+	</div>
+</div>

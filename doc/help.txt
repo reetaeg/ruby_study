@@ -1,0 +1,77 @@
+### agency
+name,
+agency_type,
+is_used,
+area,
+edi_code,
+email,
+phone,
+owner_name,
+biz_number
+
+rails g scaffold Agency name:string agency_type:string is_used:boolean area:string edi_code:string email:string phone:string owner_name:string biz_number:string
+
+## trust_money
+source_type
+amount
+etc
+
+rails g scaffold TrustMoney source_type:string agency:references etc:text
+
+### system_code
+code_type
+code
+name
+p_id
+description
+
+rails g scaffold SystemCode code_type:string code:string name:string system_code:references description:string
+
+### category
+name
+is_used
+cat_type
+p_id
+
+rails g scaffold Category name:string is_used:boolean  cat_type:string category:references
+
+### product
+code
+product_category_id
+name
+product_type
+size
+box_count
+ta_count
+img_url
+description
+purchase
+purchase_tax
+supply
+supply_tax
+
+rails g scaffold Product name code caegory:references product_type:string size:string box_count:integer ta_count:integer img_url:string description:text purchase:float purchase_tax:float supply:float supply_tax:float
+
+### product_price
+product_id
+price_type
+price
+is_used
+target
+
+rails g scaffold ProductPrice product:references price_type:string price:float is_used:boolean target:string
+
+
+
+rails generate migration AddRoleToUsers
+
+rails generate migration AddCategoryToNhSales
+
+
+### resque execute
+
+QUEUE=* rake environment resque:work
+
+
+
+

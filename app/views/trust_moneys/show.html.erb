@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Source type:</strong>
+  <%= @trust_money.source_type %>
+</p>
+
+<p>
+  <strong>Agency:</strong>
+  <%= @trust_money.agency %>
+</p>
+
+<p>
+  <strong>Etc:</strong>
+  <%= @trust_money.etc %>
+</p>
+
+<%= link_to 'Edit', edit_trust_money_path(@trust_money) %> |
+<%= link_to 'Back', trust_moneys_path %>

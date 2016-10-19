@@ -11,18 +11,14 @@
       	<% if user_signed_in? %>
         <li class="">		
           <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <%= image_tag "img.jpg" %><%= current_user.email %>
+            <%= image_tag "nouser.png" %><%= current_user.email %>
             <span class=" fa fa-angle-down"></span>
           </a>
           <ul class="dropdown-menu dropdown-usermenu pull-right">
-            <li><a href="javascript:;">  Profile</a>
-            </li>
             <li>
-              <a href="javascript:;">
-                <span>Settings</span>
-              </a>
+				<%=link_to '시스템 설정',rails_admin_path %>
             </li>
-            </li>
+           
       		<li><%=link_to '패스워드 변경',edit_user_password_path %></li>
       		<li><%=link_to '로그아웃',destroy_user_session_path, method: :delete%></li>
             

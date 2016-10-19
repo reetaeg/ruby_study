@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @agency.name %>
+</p>
+
+<p>
+  <strong>Agency type:</strong>
+  <%= @agency.agency_type %>
+</p>
+
+<p>
+  <strong>Is used:</strong>
+  <%= @agency.is_used %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @agency.area %>
+</p>
+
+<p>
+  <strong>Edi code:</strong>
+  <%= @agency.edi_code %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @agency.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @agency.phone %>
+</p>
+
+<p>
+  <strong>Owner name:</strong>
+  <%= @agency.owner_name %>
+</p>
+
+<p>
+  <strong>Biz number:</strong>
+  <%= @agency.biz_number %>
+</p>
+
+<%= link_to 'Edit', edit_agency_path(@agency) %> |
+<%= link_to 'Back', agencies_path %>

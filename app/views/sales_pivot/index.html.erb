@@ -1,35 +1,102 @@
 <div class="x_panel">
 	<div class="x_title">
-		<h2>매출 분석<small>pivot talbe</small></h2>
+		<h2>매출 분석<small>Pivot Table</small></h2>
 		<ul class="nav navbar-right panel_toolbox">
 			<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-			</li>
-			<li class="dropdown">
-			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-			  <ul class="dropdown-menu" role="menu">
-				<li><a href="#">Settings 1</a>
-				</li>
-				<li><a href="#">Settings 2</a>
-				</li>
-			  </ul>
 			</li>
 		</ul>
 		<div class="clearfix"></div>
 	</div>
-	<div id="output" class="x_content" style="overflow-x:auto" ></div>
+	<div class="x_contents">
+                  <div class="well">
+
+                    <form class="form-horizontal">
+	                    <div class="col-md-4 col-sm-4 col-xs-4 form-group has-feedback">
+	                      <input type="text" name="searchpriod" id="searchpriod" class="form-control" value="" />
+	                      <span class="fa fa-calendar form-control-feedback right" aria-hidden="true"></span>
+	                    </div>                    	
+
+	                    <div class="col-md-2 col-sm-2 col-xs-2 form-group has-feedback">
+	                      <button type="button" class="btn btn-default" id="searchBtn">Search</button>
+	                    </div> 
+	                    <div class="col-md-2 col-sm-2 col-xs-2 form-group has-feedback">
+	                      <button type="button" class="btn btn-default" id="setupBtn">View</button>
+	                    </div> 	                    
+	                                        	
+
+                    </form>
+
+                  </div>		
+		<div id="output" class="well" style="overflow-x:auto" ></div>
+	</div>
 </div>
 
 <script type="text/javascript">
-    
-    $(function(){
-        $.getJSON("sales_pivot.json", function(mps) {
-            $("#output").pivotUI(mps, {
-                rows: ["from_name"],
-                cols: ["confirm_date"],
-                aggregatorName: "Integer Sum",
-                vals: ["purchase_price"],
-                rendererName: "Heatmap"
-            });
-        });
+    $(document).ready(function() {
+    	var dataOption= {
+        startDate: moment().subtract(15, 'days'),
+        endDate: moment(),
+        format: 'YYYY-MM-DD',
+        autoUpdateInput: true,
+        dateLimit: {
+          days: 60
+        },
+        showDropdowns: true
+        }	
+    	
+      $('#searchpriod').daterangepicker(dataOption);
+      
+      $('#searchBtn').bind('click',function(){
+      	if ( $('#searchpriod').val() !="" ) {
+	      	s= $('#searchpriod').data('daterangepicker').startDate.format('YYYY-MM-DD');
+	      	e= $('#searchpriod').data('daterangepicker').endDate.format('YYYY-MM-DD');
+
+      		searchSales(s,e);
+      	} else {
+      		alert ("검색 날짜를 선택 해주세요.")
+      		
+      	}     		
+      });
+      
+       $('#setupBtn').bind('click',function(){
+       	
+       	$("#output .pvtVertList").toggle();
+       	
+      	$("#output .pvtRenderer").parent().toggle();
+
+       	$("#output .pvtVals").toggle();
+       	$("#output .pvtRows").toggle();
+       	
+       	
+       	$("#output .pvtCols").toggle();
+       }); 	
+      
+    });
+   function searchSales(s,e) {
+   	  jQuery.ajax({
+           type:"GET",
+           url:"sales_pivot.json",
+           data: { startDate: s, endDate: e },
+           dataType:"JSON", 
+           success : function(data) {
+				$("#output").pivotUI(data, {
+                	rows: ["from_name"],
+                	cols: ["confirm_date"],
+                	aggregatorName: "Integer Sum",
+                	vals: ["purchase_price"],
+                	rendererName: "Heatmap"
+            	});
+           },
+           complete : function(data) {
+                 // 통신이 실패했어도 완료가 되었을 때 이 함수를 타게 된다.
+                 // TODO
+           },
+           error : function(xhr, status, error) {
+                 alert("에러발생");
+           }
      });
+   	
+   	
+   }
+   
 </script>

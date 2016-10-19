@@ -9,7 +9,7 @@ default: &default
   pool: 5
   timeout: 5000
 
-development:
+development: &development
   adapter: mysql    #사용할 database
   encoding: utf8
   reconnect: true
@@ -27,4 +27,4 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
+  <<: *development

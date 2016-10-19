@@ -1,0 +1,6 @@
+
+	<%= form_tag '/sales_uploader/import',  :multipart=>true do %>
+	  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+	  <%= file_field_tag :file ,class:'btn btn-default pull-right'%>
+	  <%= submit_tag "매출등록", class:'btn btn-default pull-right' %>
+	<% end %>

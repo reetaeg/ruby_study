@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code type:</strong>
+  <%= @system_code.code_type %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @system_code.code %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @system_code.name %>
+</p>
+
+<p>
+  <strong>System code:</strong>
+  <%= @system_code.system_code %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @system_code.description %>
+</p>
+
+<%= link_to 'Edit', edit_system_code_path(@system_code) %> |
+<%= link_to 'Back', system_codes_path %>

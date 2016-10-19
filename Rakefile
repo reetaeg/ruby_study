@@ -2,5 +2,13 @@
 # for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
 
 require File.expand_path('../config/application', __FILE__)
+require 'resque/tasks'
+
+task "resque/work" do
+  ENV['QUEUE']='*'
+end
+
 
 Rails.application.load_tasks
+
+task "resque:preload" => :environment

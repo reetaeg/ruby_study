@@ -1,5 +1,23 @@
 Rails.application.routes.draw do
   
+  require 'resque/server'
+  mount Resque::Server, at: '/jobs'
+  
+  # You can have the root of your site routed with "root"
+  root 'commons#index'
+  
+  resources :progress_bars, only: 'show' 
+  resources :sales_uploader, only: %w(new create import) do
+        collection { post :import }
+  end
+ 
+  
+  resources :product_prices
+  resources :products
+  resources :trust_moneys
+  resources :system_codes
+  resources :agencies
+  #resources :categories
   resources :nh_sales do
     collection { post :import }
   end
@@ -13,8 +31,7 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
-   root 'commons#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

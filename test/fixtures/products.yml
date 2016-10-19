@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  code: MyString
+  caegory_id: 
+  product_type: MyString
+  size: MyString
+  box_count: 1
+  ta_count: 1
+  img_url: MyString
+  description: MyText
+  purchase: 1.5
+  purchase_tax: 1.5
+  supply: 1.5
+  supply_tax: 1.5
+
+two:
+  name: MyString
+  code: MyString
+  caegory_id: 
+  product_type: MyString
+  size: MyString
+  box_count: 1
+  ta_count: 1
+  img_url: MyString
+  description: MyText
+  purchase: 1.5
+  purchase_tax: 1.5
+  supply: 1.5
+  supply_tax: 1.5

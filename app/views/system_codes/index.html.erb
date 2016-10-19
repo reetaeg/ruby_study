@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing System Codes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code type</th>
+      <th>Code</th>
+      <th>Name</th>
+      <th>System code</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @system_codes.each do |system_code| %>
+      <tr>
+        <td><%= system_code.code_type %></td>
+        <td><%= system_code.code %></td>
+        <td><%= system_code.name %></td>
+        <td><%= system_code.system_code %></td>
+        <td><%= system_code.description %></td>
+        <td><%= link_to 'Show', system_code %></td>
+        <td><%= link_to 'Edit', edit_system_code_path(system_code) %></td>
+        <td><%= link_to 'Destroy', system_code, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New System code', new_system_code_path %>

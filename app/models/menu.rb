@@ -1,10 +1,8 @@
 #encoding:utf-8
 class Menu < ActiveRecord::Base
   
-  has_many :menus, class_name: "Menu",
-                          foreign_key: "p_id" 
+  belongs_to :menu, foreign_key: "p_id" 
  
-  belongs_to :pmenu, class_name: "Menu"
   
   def menu_type_enum
     {folder:1,page:2,link:3}
