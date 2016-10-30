@@ -333,12 +333,13 @@ $(function () {
 
 
 // NProgress
-if (typeof NProgress != 'undefined') {
+if (typeof NProgress != 'undefined' && false) {
     $(document).ready(function () {
         NProgress.start();
     });
 
     $(window).load(function () {
+    	alert('onload');
         NProgress.done();
     });
 }
