@@ -75,6 +75,11 @@ end
 
 group :production do
   gem 'rb-readline'
+  
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-rbenv-install'
+  gem 'capistrano-unicorn-nginx'  
 end
 
 
