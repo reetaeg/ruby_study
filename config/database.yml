@@ -32,5 +32,5 @@ production:
   pool: 5
   username: xsite    # mysql에 접속할 id와 password
   password: xsite123!@#
-  socket: /tmp/mysql.sock # 보통 mysql.sock은 tmp에 있다. (시스템에 따라..)
+  socket: /var/lib/mysql/mysql.sock # 보통 mysql.sock은 tmp에 있다. (시스템에 따라..)
   host: localhost

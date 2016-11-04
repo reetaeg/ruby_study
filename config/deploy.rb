@@ -23,7 +23,7 @@ set :deploy_to, '/home/deploy/apps/xsite'
 # set :format_options, command_output: true, log_file: 'log/capistrano.log', color: :auto, truncate: :auto
 
 # Default value for :pty is false
-set :pty, true
+# set :pty, true
 
 set :use_sudo, true
 
@@ -41,7 +41,7 @@ set :use_sudo, true
 
 
 set :rbenv_type, :user # or :system, depends on your rbenv setup
-set :rbenv_ruby, '2.3.0'
+set :rbenv_ruby, '2.2.3'
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 set :rbenv_roles, :all # default values
