@@ -24,7 +24,7 @@ require "capistrano/deploy"
 # require 'capistrano/passenger'
 
 # Includes tasks from other gems included in your Gemfile
-#require 'capistrano/rvm'
+
 require 'capistrano/rbenv'
 require 'capistrano/rbenv_install'
 require 'capistrano/bundler'

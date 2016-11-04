@@ -47,6 +47,9 @@ gem 'resque'
 # Use Unicorn as the app server
 gem 'unicorn-rails'
 
+gem 'unicorn'
+
+
 gem 'capistrano-rails-console'
 gem 'capistrano-rails-collection'
 gem 'capistrano-rails-tail-log'
@@ -75,7 +78,6 @@ end
 
 group :production do
   gem 'rb-readline'
-  gem 'unicorn'
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
   gem 'capistrano-rbenv-install'
