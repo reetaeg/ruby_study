@@ -223,6 +223,9 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    seed_dump (3.2.4)
+      activerecord (>= 4)
+      activesupport (>= 4)
     sinatra (1.4.7)
       rack (~> 1.5)
       rack-protection (~> 1.4)
@@ -296,6 +299,7 @@ DEPENDENCIES
   ruby-mysql
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  seed_dump
   spring
   sqlite3
   turbolinks

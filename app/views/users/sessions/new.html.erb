@@ -8,23 +8,23 @@
  			<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <h1>Login Form</h1>
            
-            <div>
+            <div class="field">
                 <%= f.label :email %>
-                <%= f.email_field :email, class:'form-control',autofocus: true %>
+                <%= f.email_field :email, class:'form-control',placeholder: "xxx@xxxx.xxx",autofocus: true %>
             </div>
-            <div>
+            <div class="field">
             	<%= f.label :password %>
            	    <%= f.password_field :password, class:'form-control', autocomplete: "off" %>
             </div>
-            <div>
+            <div class="action">
               <%= f.submit "Log in" %>
-              <a class="reset_pass" href="#">Lost your password?</a>
             </div>
             <div class="clearfix"></div>
             <div class="separator">
 
-              <p class="change_link">New to site?
-                <a href="#toregister" class="to_register"> Create Account </a>
+              <p class="change_link">              
+                <a href="#toregister" > Create Account </a>
+                <a href="#">Lost your password?</a>                
               </p>
               <div class="clearfix"></div>
               <br />
@@ -41,20 +41,27 @@
       </div>
       <div id="register" class="animate form">
         <section class="login_content">
-          <form>
+		<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <h1>Create Account</h1>
-            <div>
-              <input type="text" class="form-control" placeholder="Username" required="" />
-            </div>
-            <div>
-              <input type="email" class="form-control" placeholder="Email" required="" />
-            </div>
-            <div>
-              <input type="password" class="form-control" placeholder="Password" required="" />
-            </div>
-            <div>
-              <a class="btn btn-default submit" href="index.html">Submit</a>
-            </div>
+            
+			<div class="field">
+			<%= f.label :email %>
+			<%= f.email_field :email, class:"form-control",placeholder: "xxx@xxxx.xxx" ,autofocus: true %>
+			</div>
+			<div class="field">
+			<%= f.label :password %>
+			<% if @minimum_password_length %>
+			<em>(<%= @minimum_password_length %> characters minimum)</em>
+			<% end %><br />
+			<%= f.password_field :password, class:"form-control", autocomplete: "off" %>
+			</div>
+			<div class="field">
+			<%= f.label :password_confirmation %><br />
+			<%= f.password_field :password_confirmation, class:"form-control", autocomplete: "off" %>
+			</div>
+			<div class="actions">
+			<%= f.submit "Sign up" %>
+			</div>
             <div class="clearfix"></div>
             <div class="separator">
 
@@ -64,12 +71,12 @@
               <div class="clearfix"></div>
               <br />
               <div>
-                <h1><i class="fa fa-paw" style="font-size: 26px;"></i> Gentelella Alela!</h1>
+                <h1><i class="fa fa-paw" style="font-size: 26px;"></i> Xsite!</h1>
 
-                <p>©2015 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                <p>©2015 All Rights Reserved. Privacy and Terms</p>
               </div>
             </div>
-          </form>
+         <% end %>
           <!-- form -->
         </section>
         <!-- content -->

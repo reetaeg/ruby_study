@@ -49,10 +49,14 @@ gem 'unicorn-rails'
 
 gem 'unicorn'
 
-
+gem 'capistrano-rails'
 gem 'capistrano-rails-console'
 gem 'capistrano-rails-collection'
 gem 'capistrano-rails-tail-log'
+ 
+
+
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -60,14 +64,16 @@ gem 'capistrano-rails-tail-log'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  
 end
 
 group :development do
-  gem 'capistrano-rails'
+  
+  gem 'seed_dump'
+
   gem 'capistrano-rbenv'
   gem 'capistrano-rbenv-install'
-  gem 'capistrano-unicorn-nginx'
+  gem 'capistrano-unicorn-nginx'  
+
   
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -78,10 +84,6 @@ end
 
 group :production do
   gem 'rb-readline'
-  gem 'capistrano-rails'
-  gem 'capistrano-rbenv'
-  gem 'capistrano-rbenv-install'
-  gem 'capistrano-unicorn-nginx'  
 end
 
 

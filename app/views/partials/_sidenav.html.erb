@@ -17,7 +17,7 @@
         </div>
         <div class="profile_info">
           <span>환영합니다,</span>
-          <h2><%=current_user.email%></h2>
+          <h2><%#=current_user.email unless current_user?%></h2>
         </div>
       </div>
       <!-- /menu profile quick info -->
